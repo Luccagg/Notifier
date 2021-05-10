@@ -38,6 +38,6 @@ if __name__ == '__main__':
     sendmessage(schedule["18:00"], switch_icon(schedule["18:00"]))
     sys.exit()
     while not finish:
-        current_time = datatime.now().strftime('%H:%M')
+        current_time = datetime.now().strftime('%H:%M')
         if schedule.keys() == current_time:
             sendmessage(schedule[current_time], switch_icon(schedule[current_time]))
