@@ -28,16 +28,16 @@ if __name__ == '__main__':
     finish = False
     # Mount your schedule with your task's and time 
     schedule = {
-        "7:00": "Task1",
-        "10:00": "Task2",
-        "10:10": "Task3",
-        "11:30": "Task4",
-        "14:00": "Task5",
-        "18:00": "Task6"
+        "7:00:00": "Task1",
+        "10:00:00": "Task2",
+        "10:10:00": "Task3",
+        "11:30:00": "Task4",
+        "14:00:00": "Task5",
+        "18:00:00": "Task6"
     }
     last_task = [x for x in schedule.keys()]
     while not finish:
-        current_time = datetime.now().strftime('%H:%M')
+        current_time = datetime.now().strftime('%H:%M:%S')
         if schedule.keys() == current_time:
             sendmessage(schedule[current_time], switch_icon(schedule[current_time]))
 	    if current_time == last_task[-1]:
