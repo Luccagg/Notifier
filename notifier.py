@@ -35,9 +35,10 @@ if __name__ == '__main__':
         "14:00": "Task5",
         "18:00": "Task6"
     }
-    sendmessage(schedule["18:00"], switch_icon(schedule["18:00"]))
-    sys.exit()
+    last_task = [x for x in schedule.keys()]
     while not finish:
         current_time = datetime.now().strftime('%H:%M')
         if schedule.keys() == current_time:
             sendmessage(schedule[current_time], switch_icon(schedule[current_time]))
+	    if current_time == last_task[-1]:
+	        finish = True
