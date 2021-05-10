@@ -3,7 +3,7 @@ from pynotifier import Notification
 from datetime import datetime
 
 
-path = "/home/viper/Imagens/"
+path = "<path to the directory of the images logo>"
 
 def sendmessage(message, icon):
     Notification(
@@ -15,24 +15,25 @@ def sendmessage(message, icon):
 
 def switch_icon(task):
     switch = {
-        "TryHackMe": "try.png",
-        "Break": "sun.png",
-        "Code Wars": "code_wars.png",
-        "Free": "sun.png",
-        "Work": "work.png",
-        "Exercise": "exercise.png"
+        "Task1": "try.png",
+        "Task2": "sun.png",
+        "Task3": "code_wars.png",
+        "Task4": "sun.png",
+        "Task5": "work.png",
+        "Task6": "exercise.png"
     }
     return switch[task]
 
 if __name__ == '__main__':
     finish = False
+    # Mount your schedule with your task's and time 
     schedule = {
-        "7:00": "TryHackMe",
-        "10:00": "Break",
-        "10:10": "Code Wars",
-        "11:30": "Free",
-        "14:00": "Work",
-        "18:00": "Exercise"
+        "7:00": "Task1",
+        "10:00": "Task2",
+        "10:10": "Task3",
+        "11:30": "Task4",
+        "14:00": "Task5",
+        "18:00": "Task6"
     }
     sendmessage(schedule["18:00"], switch_icon(schedule["18:00"]))
     sys.exit()
